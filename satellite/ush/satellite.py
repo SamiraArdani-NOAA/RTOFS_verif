@@ -17,13 +17,13 @@ for climo and ice interpolations.
 All forecasts (daily 0-192 hrs)
 
 Notes:
-    v0.1: This is a data-centric set of routines, where the validDate is
+    v0.1: this is a data-centric set of routines, where the validDate is
           derived from the observations, not the model.  All of the data 
           read routines need to support vDate=None to get the latest 
           data set.  Then the code will load the necessary model forecasts
           to match the data valid time.    
-    v0.2: This is the MP version
-    v0.3: Split dbase into parameter tables to prevent collisions in r/w
+    v0.2: this is the MP version
+    v0.3: split dbase into parameter tables to prevent collisions in r/w
     v0.4: cron-ready, added timeouts to sqlite3 to prevent db locking
     v0.5: switched smap from thredds to opendap server, added time attribute
           to all obs data sets (obs.attrs['time']) to standardize it.
@@ -31,14 +31,15 @@ Notes:
           for the latest day can be determined.
     v0.7: switched from NCEP ice fields to CICE fields (from RTOFS) for ice
           masking.
-    v0.8: Ported to Mars
+    v0.8: ported to Mars
     v0.9: switched SMAP from RSS to JPL
     v1.0: reset SMAP, SMOS urls at NESDIS, GHRSST to NCEI at PO.DAAC, new interp
           for climo, ice.  Using only one processor for NN interp (regrid)
     v1.1: modified for RTOFSv2 nc files
 
     Todd Spindler
-    
+
+    v1.2: ported to Chen's Hera account with minor fixes, 1 March 2022    
 """
 import matplotlib
 matplotlib.use('agg')

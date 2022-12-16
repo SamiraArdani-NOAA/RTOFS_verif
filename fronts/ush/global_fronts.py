@@ -3,13 +3,13 @@
 Global Fronts Locator and Hausdorff Metrics
 Version 1.1
 Todd Spindler
-IMSG@NCEP/EMC
 
 Changes
-25 July 2019 -- ported to Phase 3 (Mars)
-1 June 2020 -- radio killed the video star
+25 Jul 2019 -- ported to Phase 3 (Mars)
+ 1 Jun 2020 -- radio killed the video star
 24 Aug 2020 -- ported to Hera
 13 May 2021 -- refactored code to use xarray instead of netCDF4
+ 1 Mar 2022 -- ported to Chen's Hera account with minor fixes
 """
 
 import matplotlib

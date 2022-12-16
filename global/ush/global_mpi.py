@@ -1,6 +1,6 @@
 #!/bin/env python
 """
- title: Global RTOFS Graphics Visualization with MPI
+title: Global RTOFS Graphics Visualization with MPI
 author: Todd Spindler
 version: 1.3
 
@@ -8,16 +8,17 @@ Notes:
 
 This version maps T,S anomaly fields in addition to all other params
 
-10 July 2018 (v1.1): Converted to Python 3. Changed regions diction to 
-                     OrderedDict to fix wandering color limits.  PIL image
-                     palette changed to WEB, reducing file sizes.
-14 June 2019 (v1.2): removed OrderedDict as all dictionaries in Python3.7 are
-					 ordered by default.  Moved all code to vlab/git and
-                     VPPPG_Marine_Dev directory.  Modified climo load step
-                     (load_woa) to interpolate to day.
-22 July 2019 (v1.3): ported to Phase 3 (Mars)
- 7 Aug 2020        : ported to Hera
-15 Dec 2020  (v1.4): ported to RTOFSv2
+10 Jul 2018 (v1.1): Converted to Python 3. Changed regions diction to 
+                    OrderedDict to fix wandering color limits.  PIL image
+                    palette changed to WEB, reducing file sizes.
+14 Jun 2019 (v1.2): removed OrderedDict as all dictionaries in Python3.7 are
+		    ordered by default.  Moved all code to vlab/git and
+                    VPPPG_Marine_Dev directory.  Modified climo load step
+                    (load_woa) to interpolate to day.
+22 Jul 2019 (v1.3): ported to Phase 3 (Mars)
+ 7 Aug 2020       : ported to Hera
+15 Dec 2020 (v1.4): ported to RTOFSv2
+ 1 Mar 2022       : ported to Chen's Hera account with minor fixes
 """
 
 from ipyparallel import Client

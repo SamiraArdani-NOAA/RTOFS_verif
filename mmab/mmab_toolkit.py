@@ -6,6 +6,7 @@ version: 1.0
 
 Notes
 4/1/2019 - Corrected gridlines longitude misses edge case
+3/1/2022 - Ported to Chen's Hera account
 """
 
 import mpl_toolkits.basemap

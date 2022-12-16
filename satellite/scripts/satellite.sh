@@ -1,11 +1,11 @@
 #!/bin/bash -l
 
-#-------------------------------------------------------
+#-------------------------------------------------------------
 # Class-1 Satellite Validation System
 # Version 1.0
-# Todd Spindler
-# 1 April 2019
-#-------------------------------------------------------
+# Developed by Todd Spindler, 1 April 2019
+# Ported to Chen's Hera account with minor fixes, 1 March 2022
+#-------------------------------------------------------------
 
 # set up module environment
 module purge
@@ -26,8 +26,6 @@ PROJ='marine-cpu'
 #PROJ='ovp'
 LOGPATH=/scratch2/NCEPDEV/stmp1/Lichuan.Chen/logs/class-4/satellite
 JOB='sat'
-
-#PLATFORMS='ghrsst aviso smap smos'
 
 mkdir -p $LOGPATH
 rm -f $LOGPATH/*.log

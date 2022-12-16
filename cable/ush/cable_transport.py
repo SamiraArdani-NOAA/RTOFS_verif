@@ -5,10 +5,11 @@ Todd Spindler
 5 June 2018
 
 Changes
- 6 Sept 2018 -- converted to Python3
-                modified stats plots to draw blue nowcast line
-24 July 2019 -- ported to Phase 3 (Mars)
- 2 Aug 2020 -- Return from mars 
+ 6 Sep 2018 -- converted to Python3
+               modified stats plots to draw blue nowcast line
+24 Jul 2019 -- ported to Phase 3 (Mars)
+ 2 Aug 2020 -- return from Mars 
+ 1 Mar 2022 -- ported to Chen's Hera account with minor fixes
 """
 
 import matplotlib

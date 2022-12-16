@@ -6,8 +6,9 @@ Todd Spindler
 NOAA/NWS/NCEP/EMC
 
 Changes
-25 July 2019 -- ported to Phase 3 (Mars)
+25 Jul 2019 -- ported to Phase 3 (Mars)
 26 Aug 2020 -- ported to Hera
+ 1 Mar 2022 -- ported to Chen's Hera account with minor fixes
 """
 
 import matplotlib

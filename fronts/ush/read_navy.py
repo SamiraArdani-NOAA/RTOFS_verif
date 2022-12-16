@@ -5,10 +5,8 @@ import pandas as pd
 #import pdb
 
 # DCOM location
-#DCOMdir='/scratch2/NCEPDEV/ocean/Deanna.Spindler/noscrub/DCOM'
 DCOMdir='/scratch2/NCEPDEV/ovp/Lichuan.Chen/DCOM'
 
-#dataDir='/marine/noscrub/Todd.Spindler/Navy'
 hemisphere={'N':1,'S':-1,'E':1,'W':-1}
 
 #----------------------------------------------------------------------------
