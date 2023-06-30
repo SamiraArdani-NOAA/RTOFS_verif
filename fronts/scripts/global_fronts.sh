@@ -9,7 +9,7 @@
 
 # set up module environment
 module purge
-module use /scratch2/NCEPDEV/ovp/Lichuan.Chen/modulefiles
+module use /scratch1/NCEPDEV/stmp2/Samira.Ardani/modulefiles
 module load anaconda-work/1.0.0 mmab/1.0.0
 module list
 
@@ -19,13 +19,13 @@ TASK_QUEUE='batch'
 WALL='0:30:00'
 PROJ='ovp'
 #PROJ='marine-cpu'
-LOGPATH=/scratch2/NCEPDEV/stmp1/Lichuan.Chen/logs/class-4/fronts
+LOGPATH=/scratch1/NCEPDEV/stmp2/Samira.Ardani/logs/class-4/fronts
 JOB="fronts"
 
 mkdir -p $LOGPATH
 rm -f $LOGPATH/*.log
 
-export SRCDIR='/scratch2/NCEPDEV/ovp/Lichuan.Chen/VPPPG/Global_RTOFS/EMC_ocean-verification/fronts'
+export SRCDIR='/scratch1/NCEPDEV/stmp2/Samira.Ardani/github/RTOFS_verif/fronts'
 
 job1=$(sbatch --parsable -J ${JOB}_${THE_DATE} -o $LOGPATH/${JOB}_${THE_DATE}.log -q $TASK_QUEUE --account=$PROJ --time $WALL --ntasks=$(($NCORES + 1)) --nodes=1 --wrap "python $SRCDIR/ush/global_fronts.py $THE_DATE")
 job2=$(sbatch --parsable --dependency=afterok:$job1 --partition=service -J ${JOB}_transfer_${THE_DATE} -q $TASK_QUEUE --account=$PROJ --time $WALL --ntasks 1 -o $LOGPATH/transfer_${THE_DATE}.log --wrap "$SRCDIR/scripts/global_fronts_transfer.sh $THE_DATE")

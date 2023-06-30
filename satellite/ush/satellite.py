@@ -78,7 +78,7 @@ PLOT_STATS=True
 MOVE_TO_POLAR=False
 CLEANUP_IMAGES=False
 
-srcDir='/scratch2/NCEPDEV/ovp/Lichuan.Chen/VPPPG/Global_RTOFS/EMC_ocean-verification/satellite'
+srcDir='/scratch1/NCEPDEV/stmp2/Samira.Ardani/github/RTOFS_verif/satellite'
 refDir=srcDir+'/fix'
 dbfile=refDir+'/satellite.db'
 
@@ -214,8 +214,8 @@ def get_model(vDate,platform,param):
     catalog={'sss':'prog','sst':'prog','ssh':'diag','ice_coverage':'ice'}
     units={'sss':'PSU','sst':'deg C','ssh':'meters','ice_coverage':'fraction'}
          
-    dataDir='/scratch2/NCEPDEV/ovp/Lichuan.Chen/Global/archive'
-    refDir='/scratch2/NCEPDEV/ovp/Lichuan.Chen/VPPPG/Global_RTOFS/EMC_ocean-verification/satellite/fix'
+    dataDir='/scratch1/NCEPDEV/stmp2/Samira.Ardani/Global/archive'
+    refDir='/scratch1/NCEPDEV/stmp2/Samira.Ardani/github/RTOFS_verif/satellite/fix'
     
     print(' ')
     for fcst in np.arange(0,193,24):
@@ -265,11 +265,11 @@ def get_model(vDate,platform,param):
 def get_ice(vDate=None):
 
     if vDate==None:
-        files=glob('/scratch2/NCEPDEV/ovp/Lichuan.Chen/OSTIA/OSTIA*.nc')
+        files=glob('/scratch1/NCEPDEV/stmp2/Samira.Ardani/OSTIA/OSTIA*.nc')
         files.sort()
         icefile=files[-1]
     else:
-        icefile='/scratch2/NCEPDEV/ovp/Lichuan.Chen/OSTIA/OSTIA-UKMO-L4-GLOB-v2.0_'+vDate.strftime('%Y%m%d')+'.nc'
+        icefile='/scratch1/NCEPDEV/stmp2/Samira.Ardani/OSTIA/OSTIA-UKMO-L4-GLOB-v2.0_'+vDate.strftime('%Y%m%d')+'.nc'
         
     # load ice data
     print('reading OSTIA ice')
@@ -294,11 +294,11 @@ def get_ghrsst(vDate=None):
     daily composite
     """    
     if vDate==None:
-        files=glob('/scratch2/NCEPDEV/ovp/Lichuan.Chen/GHRSST/GHRSST*.nc')
+        files=glob('/scratch1/NCEPDEV/stmp2/Samira.Ardani/GHRSST/GHRSST*.nc')
         files.sort()
         url=files[-1]    
     else:
-        url='/scratch2/NCEPDEV/ovp/Lichuan.Chen/GHRSST/GHRSST-OSPO-L4-GLOB_'+vDate.strftime('%Y%m%d')+'.nc'
+        url='/scratch1/NCEPDEV/stmp2/Samira.Ardani/GHRSST/GHRSST-OSPO-L4-GLOB_'+vDate.strftime('%Y%m%d')+'.nc'
         
     data=xr.open_dataset(url,decode_times=True)
     data['time']=data.time-pd.Timedelta('12H')  # shift 12Z offset time to 00Z
@@ -323,11 +323,11 @@ def get_smos(vDate=None):
     daily composite
     """
     if vDate==None:
-        files=glob('/scratch2/NCEPDEV/ovp/Lichuan.Chen/SMOS/SMOS*.nc')
+        files=glob('/scratch1/NCEPDEV/stmp2/Samira.Ardani/SMOS/SMOS*.nc')
         files.sort()
         url=files[-1]    
     else:
-        url='/scratch2/NCEPDEV/ovp/Lichuan.Chen/SMOS/SMOS-L3-GLOB_'+vDate.strftime('%Y%m%d')+'.nc'
+        url='/scratch1/NCEPDEV/stmp2/Samira.Ardani/SMOS/SMOS-L3-GLOB_'+vDate.strftime('%Y%m%d')+'.nc'
 
     data=xr.open_dataset(url,decode_times=True)
     data['time']=data.time-pd.Timedelta('12H')  # shift 12Z offset time to 00Z
@@ -352,11 +352,11 @@ def get_smap(vDate=None):
     daily composite
     """    
     if vDate==None:
-        files=glob('/scratch2/NCEPDEV/ovp/Lichuan.Chen/SMAP/SMAP*.nc')
+        files=glob('/scratch1/NCEPDEV/stmp2/Samira.Ardani/SMAP/SMAP*.nc')
         files.sort()
         url=files[-1]    
     else:
-        url='/scratch2/NCEPDEV/ovp/Lichuan.Chen/SMAP/SMAP-L3-GLOB_'+vDate.strftime('%Y%m%d')+'.nc'
+        url='/scratch1/NCEPDEV/stmp2/Samira.Ardani/SMAP/SMAP-L3-GLOB_'+vDate.strftime('%Y%m%d')+'.nc'
     
     data=xr.open_dataset(url,decode_times=True)
     data['time']=data.time-pd.Timedelta('12H')  # shift 12Z offset to 00Z    
@@ -380,11 +380,11 @@ def get_aviso(vDate=None):
     """
     
     if vDate==None:
-        files=glob('/scratch2/NCEPDEV/ovp/Lichuan.Chen/AVISO/nrt_*.nc')
+        files=glob('/scratch1/NCEPDEV/stmp2/Samira.Ardani/AVISO/nrt_*.nc')
         files.sort()
         filename=files[-1]    
     else:
-        filename='/scratch2/NCEPDEV/ovp/Lichuan.Chen/AVISO/nrt_global_allsat_phy_l4_'+vDate.strftime('%Y%m%d')+'.nc'
+        filename='/scratch1/NCEPDEV/stmp2/Samira.Ardani/AVISO/nrt_global_allsat_phy_l4_'+vDate.strftime('%Y%m%d')+'.nc'
                 
     data=xr.open_dataset(filename,decode_times=True)
     
@@ -416,7 +416,7 @@ def get_woa(vDate,param):
     WOA monthly data is centered on mid-month, need to scale the vDate against
     the date range to create a weighted average of the straddling month fields.
     """    
-    climoDir='/scratch2/NCEPDEV/ovp/Lichuan.Chen/Global/climo/WOA'
+    climoDir='/scratch1/NCEPDEV/stmp2/Samira.Ardani/Global/climo/WOA'
     vDate=pd.Timestamp(vDate) # just in case
     if vDate.day==15:  # even for Feb, just because
         if param=='sst':
@@ -469,7 +469,7 @@ def get_hycom_climo(vDate):
     HYCOM monthly data is centered on mid-month, need to scale the vDate against
     the date range to create a weighted average of the straddling month fields.
     """
-    climoDir='/scratch2/NCEPDEV/ovp/Lichuan.Chen/Global/climo/HYCOM'
+    climoDir='/scratch1/NCEPDEV/stmp2/Samira.Ardani/Global/climo/HYCOM'
     vDate=pd.Timestamp(vDate) # just in case
     if vDate.day==15:  # even for Feb, just because
         climofile="hycom_GLBv0.08_53X_archMN.1994_{0:02n}_2015_{0:02n}_ssh.nc".format(vDate.month)
@@ -1058,7 +1058,7 @@ if __name__ == '__main__':
 
     # set the image directory here
     vDate=vDate.strftime('%Y%m%d')  # want it as a string 
-    imageDir='/scratch2/NCEPDEV/stmp1/Lichuan.Chen/images/class-4/satellite/'+vDate
+    imageDir='/scratch1/NCEPDEV/stmp2/Samira.Ardani/images/class-4/satellite/'+vDate
 
     print('regridding climo to obs')
     #climo2=regrid(climo,obs)

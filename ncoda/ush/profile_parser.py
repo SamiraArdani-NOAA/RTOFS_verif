@@ -22,7 +22,7 @@ import subprocess
 
 max_error = 4.0
 
-outDir='/scratch2/NCEPDEV/stmp1/Lichuan.Chen/RTOFS-DA'
+outDir='/scratch1/NCEPDEV/stmp2/Samira.Ardani/RTOFS-DA'
 template="addMarker(ol.proj.fromLonLat([{},{}]),'id:\\t\\t{}\\nprofile:\\t{}\\nrcpt:\\t{}\\nerror:\\t{}','{}','profiles/{}/{}{:04n}{}');\n"
 
 #--------------------------------------------------------------------

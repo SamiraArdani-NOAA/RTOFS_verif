@@ -3,7 +3,7 @@
 # this is the cable image transfer task
 #
 
-LOCAL_DIR="/scratch2/NCEPDEV/stmp1/Lichuan.Chen/images/class-4/cable"
+LOCAL_DIR="/scratch1/NCEPDEV/stmp2/Samira.Ardani/images/class-4/cable"
 REMOTE_DIR="/home/www/polar/global/class-4/cable/archive/images"
 
 REMOTE_ID='emc.rtofs@emcrzdm.ncep.noaa.gov'

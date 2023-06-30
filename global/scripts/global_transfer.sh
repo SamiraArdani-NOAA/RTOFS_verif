@@ -9,10 +9,10 @@ THE_DATE=${3:-`date +%Y%m%d`}
 PARA=${4:-False}
 
 if [[ $PARA = 'PARA' ]]; then
-  LOCAL_DIR="/scratch2/NCEPDEV/stmp1/Lichuan.Chen/para/images/${THE_DATE}"
+  LOCAL_DIR="/scratch1/NCEPDEV/stmp2/Samira.Ardani/para/images/${THE_DATE}"
   REMOTE_DIR="/home/www/polar/develop/global/para/${FORMAT}"
 else
-  LOCAL_DIR="/scratch2/NCEPDEV/stmp1/Lichuan.Chen/images/mpi/${THE_DATE}"
+  LOCAL_DIR="/scratch1/NCEPDEV/stmp2/Samira.Ardani/images/mpi/${THE_DATE}"
   REMOTE_DIR="/home/www/polar/global/${FORMAT}"
 fi
 

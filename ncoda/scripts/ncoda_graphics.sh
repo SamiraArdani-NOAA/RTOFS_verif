@@ -16,11 +16,11 @@ CutDate=$(date --date="${RunDate} -1 day" +%Y%m%d)
 
 font=${2:-10}
 
-baseDir='/scratch2/NCEPDEV/marine/Zulema.Garraffo/rtofs_profile_plots'
-tmpDir="/scratch2/NCEPDEV/stmp1/Lichuan.Chen/RTOFS-DA"
+baseDir='/scratch1/NCEPDEV/marine/Zulema.Garraffo/rtofs_profile_plots'
+tmpDir="/scratch1/NCEPDEV/stmp2/Samira.Ardani/RTOFS-DA"
 dataDir="${baseDir}/rtofs.${RunDate}/ncoda/logs/profile_qc"
-NEWHOME="/scratch2/NCEPDEV/ovp/Lichuan.Chen"
-srcDir="${NEWHOME}/VPPPG/Global_RTOFS/EMC_ocean-verification/frames"
+NEWHOME="/scratch1/NCEPDEV/stmp2/Samira.Ardani"
+srcDir="${NEWHOME}/github/RTOFS_verif/ncoda/frames"
 polarDir="/home/www/polar/develop/OpenLayers/profiles/${CutDate}"
 
 # create tempdir

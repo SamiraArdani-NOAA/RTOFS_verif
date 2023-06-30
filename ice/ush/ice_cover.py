@@ -324,10 +324,10 @@ def process_one_day(theDate,hemisphere):
         crs=ccrs.SouthPolarStereo(central_longitude=-60.)
         bounding_lat=-39.23
         
-    imageDir='/scratch2/NCEPDEV/stmp1/Lichuan.Chen/images/ice/'+theDate
-    rtofsfile='/scratch2/NCEPDEV/ovp/Lichuan.Chen/Global/archive/'+theDate+'/rtofs_glo_2ds_n024_ice.nc'
-    icefile='/scratch2/NCEPDEV/ovp/Lichuan.Chen/OSTIA/OSTIA-UKMO-L4-GLOB-v2.0_'+theDate+'.nc'
-    dbfile='/scratch2/NCEPDEV/ovp/Lichuan.Chen/VPPPG/Global_RTOFS/EMC_ocean-verification/ice/fix/global_ice.db'
+    imageDir='/scratch1/NCEPDEV/stmp2/Samira.Ardani/images/ice/'+theDate
+    rtofsfile='/scratch1/NCEPDEV/stmp2/Samira.Ardani/Global/archive/'+theDate+'/rtofs_glo_2ds_n024_ice.nc'
+    icefile='/scratch1/NCEPDEV/stmp2/Samira.Ardani/OSTIA/OSTIA-UKMO-L4-GLOB-v2.0_'+theDate+'.nc'
+    dbfile='/scratch1/NCEPDEV/stmp2/Samira.Ardani/github/RTOFS_verif/ice/fix/global_ice.db'
         
     # separate the images by date
     if not os.path.isdir(imageDir):
@@ -434,15 +434,15 @@ def process_one_day(theDate,hemisphere):
         print('starting upload at',datetime.now())
         remoteID='tspindler@140.90.100.206'
         remoteDir='/home/www/polar/global/ice/archive/images/'+theDate
-        localDir='/scratch2/NCEPDEV/stmp1/Lichuan.Chen/images/ice/'+theDate
-        archDir='/scratch2/NCEPDEV/ovp/Lichuan.Chen/Class-4/ice/images/'+theDate
+        localDir='/scratch1/NCEPDEV/stmp2/Samira.Ardani/images/ice/'+theDate
+        archDir='/scratch1/NCEPDEV/stmp2/Samira.Ardani/Class-4/ice/images/'+theDate
         os.system('ssh -o "BatchMode yes" '+remoteID+' mkdir -p '+remoteDir)
         os.system('scp -o "BatchMode yes" '+localDir+'/*.png '+remoteID+':'+remoteDir+'/.')
         os.system('mkdir -p '+archDir)
         os.system('cp '+localDir+'/*.png '+archDir+'/.')
         os.system('rm -rf '+localDir)
         if MAKE_MOVIE:
-            os.system('/scratch2/NCEPDEV/ovp/Lichuan.Chen/VPPPG/Global_RTOFS/EMC_ocean-verification/ice/scripts/make_ice_movies.sh '+theDate)
+            os.system('/scratch1/NCEPDEV/stmp2/Samira.Ardani/github/RTOFS_verif/ice/scripts/make_ice_movies.sh '+theDate)
         
     return
 

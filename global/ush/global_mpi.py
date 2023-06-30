@@ -42,7 +42,7 @@ np.seterr(over='ignore')
 def loadData(param,ncDate,fcst):
 
 #    ncDir='/scratch2/NCEPDEV/ovp/Lichuan.Chen/Global/archive/'
-    ncDir='/scratch2/NCEPDEV/ovp/Lichuan.Chen/Global/archive/'
+    ncDir='/scratch1/NCEPDEV/stmp2/Samira.Ardani/Global/archive/'
 
     nc={           'temperature':'rtofs_glo_3dz_'+fcst+'_daily_3ztio.nc',
                       'salinity':'rtofs_glo_3dz_'+fcst+'_daily_3zsio.nc',
@@ -96,8 +96,8 @@ def drawMap(param,nick,region,lon,lat,data,u,v,lonlim,latlim,title,imageDir,imag
     #-------------------------------------
     def add_mmab_logos2(ax=None,alpha=1.0):
         # more branding, this time resizable
-        noaa_logo = plt.imread('/scratch2/NCEPDEV/ovp/Lichuan.Chen/Logos/NOAA_logo.png')
-        nws_logo = plt.imread('/scratch2/NCEPDEV/ovp/Lichuan.Chen/Logos/NWS_logo.png')
+        noaa_logo = plt.imread('/scratch1/NCEPDEV/stmp2/Samira.Ardani/Logos/NOAA_logo.png')
+        nws_logo = plt.imread('/scratch1/NCEPDEV/stmp2/Samira.Ardani/Logos/NWS_logo.png')
         size=0.10
         if ax==None:
             ax=plt.gca()        
@@ -351,7 +351,7 @@ def get_woa(param,ncDate,fcst):
     against the date range to create a weighted average of the straddling 
     month fields.
     """    
-    climoDir='/scratch2/NCEPDEV/ovp/Lichuan.Chen/Global/climo/WOA/regrid'
+    climoDir='/scratch1/NCEPDEV/stmp2/Samira.Ardani/Global/climo/WOA/regrid'
     if fcst=='n024':
         fcst_sign=-1
     elif fcst=='n048':
@@ -423,7 +423,7 @@ if __name__ == '__main__':
     
     #unpickle the clim array if available
     try:
-        f=open('/scratch2/NCEPDEV/ovp/Lichuan.Chen/VPPPG/Global_RTOFS/EMC_ocean-prod-gen/z-level/fix/clim.pkl','rb')
+        f=open('/scratch1/NCEPDEV/stmp2/Samira.Ardani/github/RTOFS_verif/fix/clim.pkl','rb')
         old_clim=pickle.load(f)
         f.close()
     except:
@@ -526,7 +526,7 @@ if __name__ == '__main__':
                     ncDate+' '+fcst+'\nDepth:'+'{: >5}'.format(depth)+' m'+ \
                     ' min: ' + dataMin + ' max: ' + dataMax
                     
-                imageDir='/scratch2/NCEPDEV/stmp1/Lichuan.Chen/images/mpi/'+ncDate
+                imageDir='/scratch1/NCEPDEV/stmp2/Samira.Ardani/images/mpi/'+ncDate
 
                 image='rtofs_'+nick+'_'+param+'_'+fcst+'_'+ \
                     '{0!s:0>3}'.format(depth)+'.png'
@@ -567,7 +567,7 @@ if __name__ == '__main__':
                     "--cluster-id="+ncDate+'_'+fcst])
 
     if fcst == 'n048':
-        f=open('/scratch2/NCEPDEV/ovp/Lichuan.Chen/VPPPG/Global_RTOFS/EMC_ocean-prod-gen/z-level/fix/clim.pkl','wb')
+        f=open('/scratch1/NCEPDEV/stmp2/Samira.Ardani/github/RTOFS_verif/fix/clim.pkl','wb')
         pickle.dump(new_clim,f)
         f.close()
                                                 

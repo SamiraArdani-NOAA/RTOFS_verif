@@ -2,7 +2,7 @@
 
 # set up module environment
 module purge
-module use /scratch2/NCEPDEV/ovp/Lichuan.Chen/modulefiles
+module use /scratch1/NCEPDEV/stmp2/Samira.Ardani/modulefiles
 module load intel/2022.1.2 impi/2022.1.2 anaconda-work/1.0.0 mmab/1.0.0
 module list
 
@@ -16,7 +16,7 @@ ENGINES=48
 YESTERDAY=`date --date='yesterday' "+%Y%m%d"`
 TMPDIR=/scratch2/NCEPDEV/stmp1/$USER
 LOGPATH=$TMPDIR/mpi/logs
-SRCDIR=/scratch2/NCEPDEV/ovp/Lichuan.Chen/VPPPG/Global_RTOFS/EMC_ocean-prod-gen/z-level
+SRCDIR=/scratch1/NCEPDEV/stmp2/Samira.Ardani/github/RTOFS_verif/global
 
 TASK_QUEUE='batch'
 TRANSFER_QUEUE='dev_transfer'
@@ -35,7 +35,7 @@ rm -rf profile_mpi
 rm -f logs/*.log
 
 # copy profile over to TMPDIR
-cp -r /scratch2/NCEPDEV/ovp/Lichuan.Chen/VPPPG/Global_RTOFS/EMC_ocean-prod-gen/z-level/scripts/profile_mpi $TMPDIR/mpi/.
+cp -r /scratch1/NCEPDEV/stmp2/Samira.Ardani/github/RTOFS_verif/global/scripts/profile_mpi $TMPDIR/mpi/.
 
 # create per-forecast mpi jobs
 for FCST in $FCSTS; do

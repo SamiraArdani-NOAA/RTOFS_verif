@@ -40,8 +40,8 @@ import hausdorff as haus                         # local module
 warnings.filterwarnings("ignore")
 
 # global parameters 
-imageDir='/scratch2/NCEPDEV/stmp1/Lichuan.Chen/images/class-4/fronts'
-dbfile='/scratch2/NCEPDEV/ovp/Lichuan.Chen/VPPPG/Global_RTOFS/EMC_ocean-verification/fronts/fix/global_fronts.db'
+imageDir='/scratch1/NCEPDEV/stmp2/Samira.Ardani/images/class-4/fronts'
+dbfile='/scratch1/NCEPDEV/stmp2/Samira.Ardani/github/RTOFS_verif/fronts/fix/global_fronts.db'
 modelDir=[]
 
 # set to old matplotlib defaults
@@ -366,8 +366,8 @@ def plot_map(model,param,navy,region):
     txt.set_family('monospace')
 
     # add some branding and dates
-    noaa_logo=image.imread('/scratch2/NCEPDEV/ovp/Lichuan.Chen/Logos/NOAA_logo.png')
-    nws_logo=image.imread('/scratch2/NCEPDEV/ovp/Lichuan.Chen/Logos/NWS_logo.png')
+    noaa_logo=image.imread('/scratch1/NCEPDEV/stmp2/Samira.Ardani/Logos/NOAA_logo.png')
+    nws_logo=image.imread('/scratch1/NCEPDEV/stmp2/Samira.Ardani/Logos/NWS_logo.png')
     fig.figimage(noaa_logo,
       yo=fig.get_figheight()*fig.dpi-noaa_logo.shape[0])
     fig.figimage(nws_logo,
@@ -444,8 +444,8 @@ def plot_stats(region):
         
         # add some branding and dates
         #add_mmab_logos()
-        noaa_logo=image.imread('/scratch2/NCEPDEV/ovp/Lichuan.Chen/Logos/NOAA_logo.png')
-        nws_logo=image.imread('/scratch2/NCEPDEV/ovp/Lichuan.Chen/Logos/NWS_logo.png')
+        noaa_logo=image.imread('/scratch1/NCEPDEV/stmp2/Samira.Ardani/Logos/NOAA_logo.png')
+        nws_logo=image.imread('/scratch1/NCEPDEV/stmp2/Samira.Ardani/Logos/NWS_logo.png')
         fig.figimage(noaa_logo,
             yo=fig.get_figheight()*fig.dpi-noaa_logo.shape[0])
         fig.figimage(nws_logo,
@@ -506,7 +506,7 @@ if __name__ == '__main__':
     print('Starting WBC Fronts at',datetime.now(),'for',theDate)
 
     # set model directory (global)
-    modelDir='/scratch2/NCEPDEV/ovp/Lichuan.Chen/Global/archive/'+theDate.strftime('%Y%m%d')
+    modelDir='/scratch1/NCEPDEV/stmp2/Samira.Ardani/Global/archive/'+theDate.strftime('%Y%m%d')
         
     regions=load_regions()
     

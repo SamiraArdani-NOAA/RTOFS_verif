@@ -5,7 +5,7 @@
 
 THE_DATE=${1:-`date --date yesterday +%Y%m%d`}
 
-LOCAL_DIR="/scratch2/NCEPDEV/stmp1/Lichuan.Chen/images/class-4/fronts"
+LOCAL_DIR="/scratch1/NCEPDEV/stmp2/Samira.Ardani/images/class-4/fronts"
 REMOTE_DIR="/home/www/polar/global/fronts/archive/images"
 
 REMOTE_ID='emc.rtofs@emcrzdm.ncep.noaa.gov'

@@ -84,8 +84,8 @@ def add_mmab_logos(alpha=1.0):
      as well as some branding and dates
      -----------------------------------------------
      """
-     noaa_logo=image.imread('/scratch2/NCEPDEV/ovp/Lichuan.Chen/Logos/NOAA_logo.png')
-     nws_logo=image.imread('/scratch2/NCEPDEV/ovp/Lichuan.Chen/Logos/NWS_logo.png')
+     noaa_logo=image.imread('/scratch1/NCEPDEV/stmp2/Samira.Ardani/Logos/NOAA_logo.png')
+     nws_logo=image.imread('/scratch1/NCEPDEV/stmp2/Samira.Ardani/Logos/NWS_logo.png')
      fig=plt.gcf()
      fig.figimage(noaa_logo,alpha=alpha,
                   yo=fig.get_figheight()*fig.dpi-noaa_logo.shape[0])
@@ -101,8 +101,8 @@ def add_mmab_logos(alpha=1.0):
     
 def add_mmab_logos2(ax=None,alpha=1.0):
      # more branding, this time resizable
-     noaa_logo = plt.imread('/scratch2/NCEPDEV/ovp/Lichuan.Chen/Logos/NOAA_logo.png')
-     nws_logo = plt.imread('/scratch2/NCEPDEV/ovp/Lichuan.Chen/Logos/NWS_logo.png')
+     noaa_logo = plt.imread('/scratch1/NCEPDEV/stmp2/Samira.Ardani/Logos/NOAA_logo.png')
+     nws_logo = plt.imread('/scratch1/NCEPDEV/stmp2/Samira.Ardani/Logos/NWS_logo.png')
      if ax==None:
           ax=plt.gca()
      size=0.10

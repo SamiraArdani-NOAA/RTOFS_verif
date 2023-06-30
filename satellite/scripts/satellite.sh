@@ -9,7 +9,7 @@
 
 # set up module environment
 module purge
-module use /scratch2/NCEPDEV/ovp/Lichuan.Chen/modulefiles
+module use /scratch1/NCEPDEV/stmp2/Samira.Ardani/modulefiles
 module load anaconda-work/1.0.0 mmab/1.0.0
 module list
 
@@ -24,13 +24,13 @@ TASK_QUEUE='batch'
 WALL='0:30:00'
 PROJ='marine-cpu'
 #PROJ='ovp'
-LOGPATH=/scratch2/NCEPDEV/stmp1/Lichuan.Chen/logs/class-4/satellite
+LOGPATH=/scratch1/NCEPDEV/stmp2/Samira.Ardani/logs/class-4/satellite
 JOB='sat'
 
 mkdir -p $LOGPATH
 rm -f $LOGPATH/*.log
 
-export SRC_DIR='/scratch2/NCEPDEV/ovp/Lichuan.Chen/VPPPG/Global_RTOFS/EMC_ocean-verification/satellite'
+export SRC_DIR='/scratch1/NCEPDEV/stmp2/Samira.ardani/github/RTOFS_verif/satellite'
 
 while [[ $THE_DATE -le $STOP_DATE ]]
 do
