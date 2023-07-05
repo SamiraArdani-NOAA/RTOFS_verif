@@ -9,7 +9,7 @@
 
 # set up module environment
 module purge
-module use /scratch1/NCEPDEV/stmp2/Samira.Ardani/modulefiles
+module use /scratch2/NCEPDEV/ovp/Lichuan.Chen/modulefiles
 module load anaconda-work/1.0.0 mmab/1.0.0
 module list
 
