@@ -41,7 +41,7 @@ cp -r /scratch1/NCEPDEV/stmp2/Samira.Ardani/github/RTOFS_verif/global/scripts/pr
 for FCST in $FCSTS; do
   echo "******** submitting job ${JOB}_${FCST} ********" 
   job1=$(sbatch --parsable -J ${JOB}_${FCST} -o $LOGPATH/${RUNDATE}_${FCST}.log -q $TASK_QUEUE --account=$PROJ --time $WALL --ntasks=$(($ENGINES + 1)) --nodes=4 --wrap "$python $SRCDIR/ush/global_mpi.py $RUNDATE $FCST $ENGINES")
-  job2=$(sbatch --parsable --dependency=afterok:$job1 --partition=service -J ${JOB}_transfer_${FCST} -q $TASK_QUEUE --account=$PROJ --time $WALL --ntasks 1 -o $LOGPATH/${RUNDATE}_transfer_${FCST}.log --wrap "$SRCDIR/scripts/global_transfer.sh nc $FCST $RUNDATE")
+#  job2=$(sbatch --parsable --dependency=afterok:$job1 --partition=service -J ${JOB}_transfer_${FCST} -q $TASK_QUEUE --account=$PROJ --time $WALL --ntasks 1 -o $LOGPATH/${RUNDATE}_transfer_${FCST}.log --wrap "$SRCDIR/scripts/global_transfer.sh nc $FCST $RUNDATE")
 done
 
 exit

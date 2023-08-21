@@ -43,13 +43,13 @@ UPDATE_DB=True
 UPLOAD_TO_POLAR=False   ## if running on compute farms (cron), this wont work
 
 # global subdirectories (will be env vars in next release)
-baseDir='/scratch1/NCEPDEV/stmp2/Samira.Ardani/images/class-4/cable'
-srcDir='/scratch1/NCEPDEV/stmp2/Samira.Ardani'
-dbfile=srcDir+'/github/RTOFS_verif/cable/fix/cable_transports.db'
-logoDir=srcDir+'/Logos'
-refDir=srcDir+'github/RTOFS_verif/cable/fix'
-DCOMDir='/scratch1/NCEPDEV/stmp2/Samira.Ardani/DCOM'
-archDir='/scratch1/NCEPDEV/stmp2/Samira.Ardani/Global/archive'
+baseDir='/scratch2/NCEPDEV/stmp1/Samira.Ardani/images/class-4/cable'
+srcDir='/scratch2/NCEPDEV/ovp/Samira.Ardani'
+dbfile=srcDir+'/VPPPG/Global_RTOFS/EMC_ocean-verification/cable/fix/cable_transports.db'
+logoDir='/scratch2/NCEPDEV/ovp/Lichuan.Chen/Logos'
+refDir=srcDir+'/VPPPG/Global_RTOFS/EMC_ocean-verification/cable/fix'
+DCOMDir='/scratch2/NCEPDEV/ovp/Samira.Ardani/DCOM'
+archDir='/scratch2/NCEPDEV/ovp/Samira.Ardani/Global/archive'
 polarDir='/home/www/polar/global/class-4/cable/archive/images/'
 
 #-----------------------------------------

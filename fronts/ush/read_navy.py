@@ -5,7 +5,7 @@ import pandas as pd
 #import pdb
 
 # DCOM location
-DCOMdir='/scratch1/NCEPDEV/stmp2/Samira.Ardani/DCOM'
+DCOMdir='/scratch2/NCEPDEV/ovp/Lichuan.Chen/DCOM'
 
 hemisphere={'N':1,'S':-1,'E':1,'W':-1}
 
